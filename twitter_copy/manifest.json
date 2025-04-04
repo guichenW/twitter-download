@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Twitter Image + URL Copier",
+    "version": "0.1",
+    "description": "Copy image and URL with right-click on Twitter",
+    "permissions": [
+      "clipboardRead",
+      "contextMenus",
+      "clipboardWrite",
+      "activeTab"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://twitter.com/*", "https://x.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "icons": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
